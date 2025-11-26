@@ -1,0 +1,184 @@
+@startuml Fritter
+
+
+class Utilisateur {
+    - String nom
+    - String prenom
+    - List<String> pseudo
+    - String email
+    - String mdp
+    - Fritter fritter
+    - Map<Utilisateur, Date> abonnements
+
+    -- Getters --
+    + String getNom()
+    + String getPrenom()
+    + List<String> getAncienPseudo()
+    + String getPseudo()
+    + String getEmail()
+    + String getMdp()
+    + List<String> getPseudoHistorique()
+    + Fritter getFritter()
+    + Map<Utilisateur, Date> getAbonnements()
+
+    -- Setters --
+    + void setFritter(Fritter fritter)
+    + void setAbonnements(Map<Utilisateur, Date> abonnements)
+    + void setNom(String nom)
+    + void setPrenom(String prenom)
+    + void setPseudo(List<String> pseudo)
+    + void setEmail(String email)
+    + void setMdp(String mdp)
+
+    -- Methods --
+    + void editPseudo(String nouvPseudo) throws SaisieIncorrecte
+    + void editMdp(String nouvMdp) throws SaisieIncorrecte
+    + void suivre(String utilisateurCible) throws SaisieIncorrecte
+    + void stopAbonnement(String utilisateurCible) throws SaisieIncorrecte
+    + void tempsdeSuivi(String utilisateurCible) throws SaisieIncorrecte
+    + void textuelle(String contenu) throws SaisieIncorrecte
+    + void multimedia(String cheminVersImage) throws SaisieIncorrecte, IOException
+    + void afficherFritte(Fritte fritte)
+    + void afficherCommentaires(Fritte fritte)
+    + void zoneCommentaire(Commentaires commentaire)
+    + void refrittage(String auteur, int numFritte) throws SaisieIncorrecte
+    + void commentaire(String auteur, int numFritte, String contenu) throws SaisieIncorrecte
+    + void like(String auteur, int numFritte) throws SaisieIncorrecte
+    + void unlike(String auteur, int numFritte) throws SaisieIncorrecte
+    + void fil(String fritos) throws SaisieIncorrecte
+    + void monProfil() throws SaisieIncorrecte
+    - String genIdFritte(Fritte fritte)
+}
+
+
+class Fritte {
+    - String auteur
+    - Date date
+    - enum Type { TEXTE, MULTIMEDIA, REFRITTAGE, COMMENTAIRE }
+    - Type type
+    - String contenu
+    - int nbreLike
+    - int nbreRefrittage
+    - int nbreCommentaires
+    - int numFritte
+    - LinkedList<Commentaires> commentaire = new LinkedList<>()
+    - LinkedList<Fritte> refrittage = new LinkedList<>()
+    - String refrittageOriginalAuteur
+    - int refrittageOriginalNumFritte
+
+
+    -- Getters--
+    + String getAuteur
+    + Date getDate
+    + Type getType
+    + String getContenu
+    + int getNbreLike
+    + int getNbreRefrittage
+    + int getNbreCommentaires
+    + int getNumFritte
+    + LinkedList<Commentaires> getCommentaire
+    + LinkedList<Fritte> getRefrittage
+    + String getRefrittageOriginalAuteur
+    + int getRefrittageOriginalNumFritte
+
+    -- Setters--
+    + void setAuteur(String auteur) 
+    + void setDate(Date date) 
+    + void setType(Type type)
+    + void setContenu(String contenu) 
+    + void setNbreLike(int nbreLike)
+    + void setNbreRefrittage(int nbreRefrittage) 
+    + void setNbreCommentaires(int nbreCommentaires) 
+    + void setNumFritte(int numFritte) 
+    + void setCommentaire(LinkedList<Commentaires> commentaire)
+    + void addCommentaire(Commentaires comment) 
+    + void setRefrittage(LinkedList<Fritte> refrittage) 
+    + void setRefrittageOriginalAuteur(String refrittageOriginalAuteur) 
+    + void setRefrittageOriginalNumFritte(int refrittageOriginalNumFritte)
+}
+
+class Img2Ascii extends Fritte {
+    - BufferedImage img
+    - double pixval
+    - PrintWriter prntwrt
+    - FileWriter filewrt
+
+    -- Constructors --
+    + Img2Ascii(Utilisateur auteur, String fichier) throws SaisieIncorrecte, IOException
+
+    -- Getters--
+    + void convertToAscii(String imgname)
+    + String strChar(double g)
+    + void print(String str)
+}
+
+
+class Commentaires extends Fritte {
+    - List<Commentaires> comListe = new ArrayList<>();
+
+    -- Getters--
+    + void addComListe(Commentaires comment)
+    + List<Commentaires> getComListe()
+    + List<Commentaires> getComParLike()
+}
+
+class Fritter {
+    - List<Utilisateur> fritos
+    - Map<Fritte, Type> originales
+    - Map<Fritte, Type> multimedia
+    - Map<Fritte, Type> ensembledesFrittes
+    - Map<Fritte, Type> commentaires
+    - Map<Fritte, Type> refrittages
+    - List<Utilisateur> fritosEnLigne
+    - Map<Fritte, Type> frittesFil
+    - static int numFritteActuel
+
+    -- Getters--
+    + List<Utilisateur> getFritos()
+	+ Map<Fritte, Type> getMultimedia()
+	+ Map<Fritte, Type> getOriginales()
+	+ Map<Fritte, Type> getEnsembledesFrittes()
+	+ LinkedList<String> getCommentaires()
+	+ LinkedList<String> getRefrittages()
+	+ List<Utilisateur> getFritosEnLigne()
+    + Map<Fritte, Type> getFrittesFil()
+	+ static int getNumFritteActuel() 
+
+    --Setters--
+    + void setFritos(List<Utilisateur> fritos)
+    + void setOriginales(Map<Fritte, Type> originales)
+    + void setMultimedia(Map<Fritte, Type> multimedia)
+    + void setEnsembledesFrittes(Map<Fritte, Type> ensembledesFrittes)
+    + void setCommentaires(LinkedList<String> commentaires)
+    + void setRefrittages(LinkedList<String> refrittages)
+    + void setFritosEnLigne(List<Utilisateur> fritosEnLigne)
+    + void setFrittesFil(Map<Fritte, Type> frittesFil) 
+	+ static void setNumFritteActuel(int numFritteActuel)
+
+
+    -- Methods --
+    + Utilisateur creerCompte(String nom, String prenom, String pseudo, String email, String mdp) throws SaisieIncorrecte
+    + void verifArgs(Object... args) throws SaisieIncorrecte
+    - Utilisateur rechercheParEmail(String email)
+    + Utilisateur rechercheParPseudoActuel(String pseudo)
+    + Utilisateur rechercheParPseudoAncien(String pseudo, Utilisateur utilisateurAppelant)
+    + boolean isFritosEnLigne(Utilisateur utilisateur)
+    + void majPseudo(Utilisateur utilisateur, String newPseudo)
+    + void deconnexion(Utilisateur utilisateur) throws SaisieIncorrecte
+    + Utilisateur connexion(String email, String mdp) throws SaisieIncorrecte
+    + static int genNumFritte()
+    + Commentaires rechercherCommentaire(String auteur, int numFritte)
+    + Fritte rechercherFritte(String auteur, int numFritte)
+}
+
+Utilisateur "1" o-- "..* " Fritte : poste
+Fritter "1" o-- "0..*" Utilisateur : regroupe
+Fritter "1" --> "0..*" Fritte : contrôle
+Utilisateur "0..*" -- "0..*" Utilisateur : follow
+
+
+Img2Ascii --|> Fritte : extends
+Fritte <-- Utilisateur : association
+
+Commentaires --|> Fritte : extends
+Fritte <-- Utilisateur : association

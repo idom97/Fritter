@@ -1,0 +1,10 @@
+# Fichiers et dossiers à ignorer
+
+# Dossier de sortie de la compilation (binaires)
+bin/
+# Tous les fichiers de classe (binaires)
+*.class
+# Fichiers de log ou temporaires (si vous en générez)
+*.log
+tmp/
+temp/

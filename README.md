@@ -1,4 +1,4 @@
-# Fritter
+# Fritter - Projet Programmation Orientée Objet en JAVA
 ## ⚙️ ETAPES DE LANCEMENT DU PROGRAMME SOUS LINUX
 
 Dans le terminal, cherchez le répertoire Fritter avec la commande pwd:

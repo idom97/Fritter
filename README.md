@@ -1,5 +1,5 @@
 # Fritter - Projet Programmation Orientée Objet en JAVA
-Implémentation d'un Service de Microblogging via Tests Unitaires : Fritter
+Implémentation d'un Service de Microblogging en langage JAVA via des Tests Unitaires.
 ## ⚙️ ETAPES DE LANCEMENT DU PROGRAMME SOUS LINUX
 
 Dans le terminal, cherchez le répertoire Fritter avec la commande pwd:

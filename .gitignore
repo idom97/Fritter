@@ -1,10 +1,25 @@
 # Fichiers et dossiers à ignorer
-
 # Dossier de sortie de la compilation (binaires)
 bin/
 # Tous les fichiers de classe (binaires)
 *.class
-# Fichiers de log ou temporaires (si vous en générez)
+
+# Fichiers IDE/Eclipse à ignorer
+.classpath
+.project
+.settings/
+Fritter/.classpath
+Fritter/.project
+Fritter/.settings/
+
+# Fichiers UML et de diagrammes (NON ESSENTIELS pour l'exécution)
+*.puml
+*.jpg
+
+# Dossier UML dédié :
+fritterUml/
+
+# Fichiers de log ou temporaires
 *.log
 tmp/
 temp/

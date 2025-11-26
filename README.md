@@ -1,4 +1,5 @@
 # Fritter - Projet Programmation Orientée Objet en JAVA
+Implémentation d'un Service de Microblogging via Tests Unitaires : Fritter
 ## ⚙️ ETAPES DE LANCEMENT DU PROGRAMME SOUS LINUX
 
 Dans le terminal, cherchez le répertoire Fritter avec la commande pwd:
@@ -15,7 +16,7 @@ $ javac -d bin -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" src/Fritter/
 
 ## 🛠️  EXIGENCES
 
-La commande javac doit être installée:
+Le compilateur Javac est installé avec OpenJDK 17:
 ```bash
 $ sudo apt install openjdk-17-jdk-headless
 $ javac -version

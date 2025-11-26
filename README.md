@@ -1,6 +1,4 @@
 # Fritter
-Service de microblogging nommé Fritter (inspiré de Twitter/X) réalisé en langage Java dans le cadre d'un projet académique de la seconde année de licence informatique à distance de l’Université Paris 8, sous la direction du Professeur G.BESACIER.
-
 ## ⚙️ ETAPES DE LANCEMENT DU PROGRAMME SOUS LINUX
 
 Dans le terminal, cherchez le répertoire Fritter avec la commande pwd:

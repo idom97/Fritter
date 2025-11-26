@@ -1,4 +1,5 @@
-# Fichiers et dossiers à ignorer
+# Fichiers et dossiers à ignorer par Git dans un projet Java
+
 # Dossier de sortie de la compilation (binaires)
 bin/
 # Tous les fichiers de classe (binaires)
@@ -15,9 +16,7 @@ Fritter/.settings/
 # Fichiers UML et de diagrammes (NON ESSENTIELS pour l'exécution)
 *.puml
 *.jpg
-
-# Dossier UML dédié :
-fritterUml/
+UML/
 
 # Fichiers de log ou temporaires
 *.log

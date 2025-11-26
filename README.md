@@ -1,2 +1,23 @@
 # Fritter
 Le projet vise à concevoir et à implémenter, en utilisant le langage Java, le cœur fonctionnel d'un service de microblogging nommé Fritter (inspiré de Twitter/X).  Ce programme est une suite complète de tests unitaires (JUnit) servant à démontrer la fiabilité des fonctionnalités fondamentales ( Gestion des comptes, Publications, Interactions, etc)
+
+## ⚙️ ETAPES DE LANCEMENT DU PROGRAMME SOUS LINUX
+Dans le terminal, chercher le répertoire Fritter avec la commande pwd:
+```bash
+$ pwd Fritter
+```
+## 🚀 LANCEMENT DU SHELL
+Placez vous dans le répertoire à l'aide de la commande cd, puis lancez le programme
+à l'aide de javac:
+Pour exécuter le minishell:
+```bash
+$ javac -d bin -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" src/Fritter/*.java src/FritterTest/*.java
+```
+
+## 🛠️  EXIGENCES
+
+La commande javac doit être installée:
+```bash
+$ sudo apt install openjdk-17-jdk-headless
+$ javac -version
+```

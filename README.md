@@ -1,5 +1,5 @@
 # Fritter
-Ce projet académique réalisé en langage Java, implémente un service de microblogging nommé Fritter (inspiré de Twitter/X).  Ce programme est une suite complète de tests unitaires (JUnit) servant à démontrer la fiabilité des fonctionnalités fondamentales ( Gestion des comptes, Publications, Interactions, etc)
+Ce projet académique réalisé en langage Java, implémente un service de microblogging nommé Fritter (inspiré de Twitter/X).  Ce programme est une suite complète de tests unitaires (JUnit) servant à démontrer la fiabilité des fonctionnalités fondamentales ( Gestion des comptes, Publications, Interactions, etc).
 
 ## ⚙️ ETAPES DE LANCEMENT DU PROGRAMME SOUS LINUX
 
